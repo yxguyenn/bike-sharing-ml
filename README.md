@@ -1,47 +1,27 @@
 # Bike Sharing Demand Prediction
 
 ## Overview
-This project builds and evaluates machine learning models to predict hourly bike rental demand using weather and temporal features from the Bike Sharing dataset (UCI or Kaggle).
+This project builds and evaluates supervised machine learning models to predict **hourly bike rental demand** using weather and temporal features from the UCI Bike Sharing Dataset.
 
-Using:
-- **UCI Bike Sharing Dataset** (hour.csv / day.csv)
+## Dataset
+- Source: UCI Machine Learning Repository
+- Granularity: Hourly
+- Target variable: total bike rentals per hour
 
-This repo is set up to work with a single CSV placed at: `data/bike_sharing.csv`.
-
-## Quickstart
-
-1) **Create a virtual environment **
-```bash
-python -m venv .venv
-source .venv/bin/activate  # mac/linux
-# .venv\Scripts\activate  # windows
-```
-
-2) **Install dependencies**
-```bash
-pip install -r requirements.txt
-```
-
-3) **Add your data**
-Place a CSV file at:
-- `data/bike_sharing.csv`
-
-Supported formats:
-- UCI hourly/day: columns like `cnt`, `season`, `yr`, `mnth`, `hr`, `weekday`, `weathersit`, `temp`, `atemp`, `hum`, `windspeed`
-
-4) **Run the notebook**
-Open `bike_sharing_ml.ipynb` in Jupyter/VSCode and run all cells.
-
-## What the notebook does
-- Loads and inspects the data
-- Handles basic cleaning (drops obvious ID columns, removes leakage)
-- Creates time features (if datetime exists)
-- Builds preprocessing pipelines (numeric scaling + categorical one-hot encoding)
-- Trains and compares:
-  - Linear Regression
+## Methods
+- Data cleaning and preprocessing
+- Feature engineering using temporal and weather variables
+- Model comparison:
+  - Linear Regression (baseline)
   - Random Forest Regressor
   - Gradient Boosting Regressor
-- Evaluates using RMSE and R² on a train/validation split
+- Evaluation metrics: RMSE and R²
+
+## Results
+Tree-based models significantly outperformed linear regression, indicating strong non-linear relationships in the data.
+- **Best model:** Random Forest  
+- **R²:** ~0.95  
+- **RMSE:** ~41  
 
 ## Tools
 Python, NumPy, Pandas, scikit-learn, Jupyter Notebook
