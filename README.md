@@ -10,7 +10,7 @@ This repo is set up to work with a single CSV placed at: `data/bike_sharing.csv`
 
 ## Quickstart
 
-1) **Create a virtual environment (optional)**
+1) **Create a virtual environment **
 ```bash
 python -m venv .venv
 source .venv/bin/activate  # mac/linux
